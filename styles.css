@@ -1,0 +1,62 @@
+body, html {
+  margin:0; padding:0;
+  font-family: 'Dancing Script', cursive;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.overlay {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%;
+  background: #ffafbd;
+  background: radial-gradient(circle, #ffafbd, #ffc3a0);
+  display: flex; justify-content:center; align-items:center;
+}
+.box {
+  background: rgba(255,255,255,0.9);
+  padding: 40px; border-radius: 12px;
+  text-align: center; animation: fadeIn 1.5s;
+}
+.box input {
+  padding: 10px; font-size:1.2em;
+  margin-top: 15px;
+  border-radius: 6px; border: 1px solid #ccc;
+  text-align: center;
+}
+.box button {
+  margin-top: 15px;
+  padding: 10px 20px; font-size:1.2em;
+  background:#ff6b6b; color:white;
+  border:none; border-radius: 6px;
+  cursor: pointer;
+}
+.content {
+  display:none;
+  height:100vh;
+  background: radial-gradient(circle, #ffe6e9, #ffafbd);
+  animation: contentFade 2s ease-in-out;
+  padding: 60px;
+}
+.message-box {
+  background: rgba(255,255,255,0.85);
+  max-width:600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.message-box h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.message-box p {
+  font-size: 1.2em;
+  margin-bottom: 12px;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform: scale(0.8); }
+  to { opacity:1; transform: scale(1); }
+}
+@keyframes contentFade {
+  from { opacity:0; }
+  to { opacity:1; }
+}
