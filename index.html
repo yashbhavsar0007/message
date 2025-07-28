@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Yash 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fff0f5, #fdeff2);
+      overflow-x: hidden;
+      height: 100vh;
+    }.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #e91e63;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+input[type="password"] {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 2px solid #e91e63;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 15px;
+  animation: slideUp 1s ease-in-out;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+button:hover {
+  background-color: #d81b60;
+  transform: scale(1.05);
+}
+
+.proposal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.proposal p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2;
+  max-width: 600px;
+  color: #444;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+  background-size: contain;
+  animation: float 6s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="center" id="loginBox">
+    <h1>🔒 Enter Secret Code</h1>
+    <input type="password" id="password" placeholder="Enter password...">
+    <button onclick="unlockPage()">Unlock 💗</button>
+  </div>  <div class="center proposal" id="proposal">
+    <h1>From Yash 💌</h1>
+    <p>
+      I hope this message goes to you and doesn't get seen by anyone else.<br><br>
+      I want to tell you something...<br><br>
+      I like you for quite some time now, and every time I see you, my eyes only stare 👀 at you and I forget the world 🌍.<br><br>
+      You are the most beautiful and mature girl I’ve ever met. ❤❤<br><br>
+      <strong>I LOVE YOU 🌷🩷</strong><br><br>
+      I just want to see you happy always.<br>
+      I'm waiting for your answer...<br>
+      Think calmly and tell me your answer...
+    </p>
+  </div>  <script>
+    let heartInterval;
+
+    function unlockPage() {
+      const password = document.getElementById("password").value;
+      if (password === "777") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("proposal").style.display = "flex";
+        startHeartAnimation();
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+
+    function startHeartAnimation() {
+      heartInterval = setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = -20 + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 7000);
+      }, 300);
+    }
+  </script></body>
+</html>
